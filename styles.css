@@ -26,17 +26,17 @@ body {
   nav {
     background-color: #000;
     padding: .5em;
+    /*This part is making the navbar "sticky" to scroll with page but sticks to viewport once
+    it gets there*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; /*30px to test, it worked*/
   }
 
   nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    /*This part is making the navbar "sticky" to scroll with page but sticks to viewport once
-    it gets there*/
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
   }
 /*Making navbar horizontal*/
   nav li {
@@ -56,12 +56,26 @@ body {
     padding: .5em 1em;
   }
 /*Using CSS Grid Layout to make images in two columns*/
+  .grid {
+    margin: 0 auto;
+    padding: 20px 20px;
+    max-width: 980px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+
   .photos {
     list-style: none;
-    margin: 0;
+    margin: 3;
     padding: 0;
-    display:grid;
-    grid-template-columns: 2px, 2px;
+    padding-left: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    /*Making Images Bigger*/
+    width: 27em;
+    height: 27em;
   }
 /*Making image centered and adding text-wrap around the image*/
   .feature {
@@ -73,5 +87,4 @@ body {
       float: left;
       margin: 1.5px;
       padding-right: 1.2em;
-
   }
